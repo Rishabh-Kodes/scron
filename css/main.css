@@ -107,6 +107,7 @@ img {
   box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
+  z-index: 9;
 }
 
 .navbar > .flex {
@@ -504,6 +505,23 @@ img {
 .chart-title {
   font-weight: 500;
   margin-bottom: 2rem;
+}
+
+/* reports */
+.reports {
+  background-color: var(--accents-2);
+  width: 100vw;
+  height: calc(100vh - 80px);
+  position: relative;
+}
+
+.reports > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: var(--primary);
+  font-size: 5rem;
 }
 
 @media (max-width: 1000px) {
