@@ -85,12 +85,25 @@ img {
   cursor: pointer;
 }
 
+/* Hamburger */
+.hamburger {
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  margin-top: 22px;
+  margin-right: 2rem;
+}
+
 /* Navbar */
 .navbar {
   height: 80px;
   width: 100%;
   padding-top: 15px;
   position: relative;
+  transition: max-height 0.25s ease-in;
   box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 0px 49px -23px rgba(0, 0, 0, 0.5);
@@ -491,4 +504,106 @@ img {
 .chart-title {
   font-weight: 500;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .navbar_links,
+  .navbar_profile {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .navbar.active {
+    height: auto;
+    padding-bottom: 2rem;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navbar.active .navbar_links,
+  .navbar_profile {
+    display: flex;
+  }
+
+  .navbar > .flex {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar_links {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar_profile {
+    width: 100%;
+    align-items: center;
+  }
+
+  .leaderboard {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .statistics_body {
+    flex-wrap: wrap;
+  }
+
+  .statistics_item {
+    flex-basis: calc(100% / 2 - 3%);
+  }
+
+  .statistics_item:nth-child(2) {
+    border: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-sidebar {
+    display: block;
+  }
+
+  .visitors_tabs {
+    flex-wrap: wrap;
+  }
+
+  .visitors_tab {
+    padding-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid var(--accents-5);
+  }
+
+  .visitors_tab:last-child {
+    padding-bottom: 0;
+  }
+
+  .visitors_tab.active::after {
+    bottom: 0;
+    height: 4px;
+    background-color: var(--primary);
+  }
+
+  .chart-title {
+    font-size: 0.9rem;
+  }
+
+  .statistics_item {
+    flex-basis: 100%;
+    border: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--accents-4);
+  }
+
+  .statistics_item:last-child {
+    padding-bottom: 0;
+  }
+
+  .resources_tabs {
+    height: 3rem;
+  }
 }

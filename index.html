@@ -38,6 +38,10 @@
             </div>
           </div>
         </div>
+
+        <div class="hamburger" onclick="expandNavbar()">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
     </div>
     <!-- Navbar ends -->
@@ -245,4 +249,18 @@
       </div>
     </div>
   </body>
+  <script>
+    function expandNavbar() {
+      const navbar = document.querySelector(".navbar");
+      const hamburger = document.querySelector(".hamburger");
+
+      navbar.classList.toggle("active");
+
+      if (navbar.classList.contains("active")) {
+        hamburger.innerHTML = '<i class="fas fa-times"></i>';
+      } else {
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    }
+  </script>
 </html>
