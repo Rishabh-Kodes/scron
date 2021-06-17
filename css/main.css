@@ -422,6 +422,8 @@ img {
 .resource > .views {
   color: var(--accents-5);
   margin-left: auto;
+  font-weight: 400;
+  font-size: 0.8rem;
 }
 
 /* Visitors */
